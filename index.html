@@ -3,10 +3,389 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Central de Capacitação MaxSoluções</title>
+
+  <title>Trilha Reforma Tributária 2026</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Montserrat", Arial, sans-serif;
+      background: transparent;
+      color: #ffffff;
+    }
+
+    .training {
+      width: 100%;
+      padding: 34px 20px 40px;
+      background:
+        radial-gradient(circle at 85% 0%, rgba(215,163,41,.13), transparent 30%),
+        linear-gradient(135deg, #151515 0%, #202020 55%, #111111 100%);
+      overflow: hidden;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 12px;
+      line-height: 1;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #d7a329;
+      margin-bottom: 12px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 24px;
+      height: 2px;
+      background: #d7a329;
+    }
+
+    h1 {
+      font-size: clamp(28px, 4vw, 43px);
+      line-height: 1.08;
+      font-weight: 800;
+      max-width: 760px;
+      margin-bottom: 11px;
+    }
+
+    .intro {
+      max-width: 750px;
+      color: #c9c9c9;
+      font-size: 15px;
+      line-height: 1.65;
+      margin-bottom: 28px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .meta-item {
+      border: 1px solid rgba(215,163,41,.28);
+      background: rgba(255,255,255,.035);
+      padding: 9px 13px;
+      border-radius: 999px;
+      color: #dedede;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 13px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 25px;
+      left: 5%;
+      right: 5%;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        #d7a329 0%,
+        #d7a329 13%,
+        rgba(255,255,255,.16) 13%,
+        rgba(255,255,255,.16) 100%
+      );
+      z-index: 0;
+    }
+
+    .card {
+      position: relative;
+      z-index: 1;
+      min-height: 245px;
+      padding: 18px;
+      border-radius: 14px;
+      background: rgba(28,28,28,.96);
+      border: 1px solid rgba(255,255,255,.09);
+      transition: transform .22s ease, border-color .22s ease, background .22s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card.available {
+      border-color: rgba(215,163,41,.60);
+      background:
+        linear-gradient(180deg, rgba(215,163,41,.09), rgba(28,28,28,.96) 42%);
+    }
+
+    .card.available:hover {
+      transform: translateY(-5px);
+      border-color: #d7a329;
+    }
+
+    .number {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 13px;
+      font-weight: 800;
+      background: #202020;
+      border: 1px solid rgba(255,255,255,.14);
+      color: #a8a8a8;
+      margin-bottom: 18px;
+    }
+
+    .available .number {
+      color: #111111;
+      background: #d7a329;
+      border-color: #d7a329;
+      box-shadow: 0 0 0 6px rgba(215,163,41,.08);
+    }
+
+    .status {
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      color: #777;
+    }
+
+    .available .status {
+      color: #d7a329;
+    }
+
+    .card h2 {
+      font-size: 17px;
+      line-height: 1.25;
+      font-weight: 700;
+      margin-bottom: 9px;
+      color: #ffffff;
+    }
+
+    .card p {
+      font-size: 12px;
+      line-height: 1.55;
+      color: #999999;
+      margin-bottom: 18px;
+    }
+
+    .button {
+      margin-top: auto;
+      display: inline-flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      border-radius: 8px;
+      padding: 12px 13px;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: .4px;
+      font-weight: 800;
+      font-size: 11px;
+      border: 1px solid rgba(255,255,255,.10);
+      color: #777;
+      background: rgba(255,255,255,.025);
+      pointer-events: none;
+    }
+
+    .available .button {
+      color: #111111;
+      background: #d7a329;
+      border-color: #d7a329;
+      pointer-events: auto;
+      transition: background .2s ease, transform .2s ease;
+    }
+
+    .available .button:hover {
+      background: #e4b43f;
+    }
+
+    .arrow {
+      font-size: 17px;
+      line-height: 1;
+    }
+
+    .footnote {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: #7f7f7f;
+      font-size: 11px;
+      margin-top: 19px;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #d7a329;
+      box-shadow: 0 0 0 4px rgba(215,163,41,.08);
+    }
+
+    @media (max-width: 950px) {
+      .timeline {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .timeline::before {
+        display: none;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .training {
+        padding: 26px 14px 30px;
+      }
+
+      .timeline {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        min-height: auto;
+      }
+
+      .meta {
+        margin-bottom: 22px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Central de Capacitação MaxSoluções</h1>
-  <p>Hospedagem funcionando.</p>
+
+<section class="training">
+  <div class="container">
+
+    <div class="eyebrow">Sua trilha de capacitação</div>
+
+    <h1>Reforma Tributária 2026</h1>
+
+    <p class="intro">
+      Uma jornada progressiva para compreender as mudanças da Reforma Tributária,
+      seus impactos na emissão fiscal e o funcionamento da Apuração Assistida do IBS.
+    </p>
+
+    <div class="meta">
+      <div class="meta-item">4 módulos</div>
+      <div class="meta-item">Avaliação final</div>
+      <div class="meta-item">Capacitação interna</div>
+    </div>
+
+    <div class="timeline">
+
+      <article class="card available">
+        <div class="number">01</div>
+        <div class="status">Disponível</div>
+
+        <h2>Fundamentos</h2>
+
+        <p>
+          Conheça os conceitos iniciais da Reforma Tributária
+          e entenda a lógica da Apuração Assistida.
+        </p>
+
+        <a class="button" href="#">
+          Iniciar módulo
+          <span class="arrow">→</span>
+        </a>
+      </article>
+
+      <article class="card">
+        <div class="number">02</div>
+        <div class="status">Em breve</div>
+
+        <h2>NF-e e NFC-e</h2>
+
+        <p>
+          Novos campos, classificações, validações e cuidados
+          necessários na emissão dos documentos fiscais.
+        </p>
+
+        <span class="button">
+          Em breve
+          <span class="arrow">•</span>
+        </span>
+      </article>
+
+      <article class="card">
+        <div class="number">03</div>
+        <div class="status">Em breve</div>
+
+        <h2>Apuração Assistida</h2>
+
+        <p>
+          Entenda como documentos, débitos e créditos passam
+          a compor a nova sistemática de apuração.
+        </p>
+
+        <span class="button">
+          Em breve
+          <span class="arrow">•</span>
+        </span>
+      </article>
+
+      <article class="card">
+        <div class="number">04</div>
+        <div class="status">Em breve</div>
+
+        <h2>Riscos e Procedimentos Max</h2>
+
+        <p>
+          Aplique o conhecimento à rotina fiscal e aos padrões
+          internos de análise e conferência.
+        </p>
+
+        <span class="button">
+          Em breve
+          <span class="arrow">•</span>
+        </span>
+      </article>
+
+      <article class="card">
+        <div class="number">✓</div>
+        <div class="status">Etapa final</div>
+
+        <h2>Avaliação Final</h2>
+
+        <p>
+          Valide os conhecimentos adquiridos ao longo
+          de toda a trilha de capacitação.
+        </p>
+
+        <span class="button">
+          Em breve
+          <span class="arrow">•</span>
+        </span>
+      </article>
+
+    </div>
+
+    <div class="footnote">
+      <span class="dot"></span>
+      Novos módulos serão disponibilizados conforme o avanço da capacitação.
+    </div>
+
+  </div>
+</section>
+
 </body>
 </html>
