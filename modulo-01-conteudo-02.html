@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html,body{
+  width:100%;
+  margin:0;
+  background:#f5f5f5;
+  font-family:"Montserrat",Arial,sans-serif;
+  color:#151515;
+}
+
+.section{
+  width:100%;
+  padding:46px 24px;
+  background:#f5f5f5;
+}
+
+.wrap{
+  max-width:1100px;
+  margin:0 auto;
+}
+
+.eyebrow{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#916326;
+  font-size:12px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:1.4px;
+  margin-bottom:12px;
+}
+
+.eyebrow:before{
+  content:"";
+  width:26px;
+  height:2px;
+  background:#d7a329;
+}
+
+h2{
+  font-size:clamp(27px,3.5vw,39px);
+  line-height:1.12;
+  font-weight:800;
+  margin-bottom:16px;
+}
+
+.intro{
+  max-width:850px;
+  color:#555;
+  font-size:15px;
+  line-height:1.7;
+  margin-bottom:32px;
+}
+
+.diagram{
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  gap:28px;
+  align-items:center;
+  margin-bottom:28px;
+}
+
+.units{
+  display:grid;
+  gap:10px;
+}
+
+.unit{
+  padding:15px 18px;
+  border-radius:10px;
+  background:#fff;
+  border:1px solid #ddd;
+  font-size:13px;
+  font-weight:700;
+}
+
+.connector{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:#916326;
+  font-weight:800;
+  font-size:12px;
+  text-transform:uppercase;
+}
+
+.connector span{
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  background:#d7a329;
+  display:grid;
+  place-items:center;
+  color:#111;
+  font-size:20px;
+}
+
+.central{
+  padding:26px;
+  border-radius:14px;
+  background:#171717;
+  color:#fff;
+  border:1px solid rgba(215,163,41,.45);
+}
+
+.central small{
+  display:block;
+  color:#d7a329;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+
+.central h3{
+  font-size:21px;
+  line-height:1.2;
+  margin-bottom:10px;
+}
+
+.central p{
+  color:#ccc;
+  font-size:13px;
+  line-height:1.6;
+}
+
+.note{
+  margin-top:24px;
+  padding:18px 20px;
+  border-left:4px solid #d7a329;
+  background:#fff;
+  border-radius:8px;
+  color:#555;
+  font-size:13px;
+  line-height:1.65;
+}
+
+.note strong{
+  color:#151515;
+}
+
+.source{
+  margin-top:14px;
+  font-size:10px;
+  color:#8a8a8a;
+}
+
+@media(max-width:750px){
+  .diagram{
+    grid-template-columns:1fr;
+  }
+
+  .connector{
+    justify-content:center;
+  }
+
+  .connector span{
+    transform:rotate(90deg);
+  }
+
+  .section{
+    padding:34px 16px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section class="section">
+  <div class="wrap">
+
+    <div class="eyebrow">02 • Visão da empresa</div>
+
+    <h2>O que acontece com matriz e filiais?</h2>
+
+    <p class="intro">
+      No IBS, a lógica de apurações separadas por estabelecimento é substituída
+      por uma visão integrada da pessoa jurídica. Débitos e créditos dos diferentes
+      estabelecimentos passam a ser consolidados em uma única apuração.
+    </p>
+
+    <div class="diagram">
+
+      <div class="units">
+        <div class="unit">Matriz</div>
+        <div class="unit">Filial 01</div>
+        <div class="unit">Filial 02</div>
+        <div class="unit">Demais estabelecimentos</div>
+      </div>
+
+      <div class="connector">
+        <span>→</span>
+      </div>
+
+      <div class="central">
+        <small>Apuração unificada</small>
+
+        <h3>Uma única apuração da pessoa jurídica</h3>
+
+        <p>
+          Os débitos e créditos são consolidados e a apuração fica concentrada
+          no CNPJ da matriz, independentemente da localização dos estabelecimentos.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="note">
+      <strong>Na prática:</strong> o contribuinte deixa de visualizar várias
+      apurações paralelas por estabelecimento e passa a trabalhar com uma visão
+      consolidada da empresa.
+    </div>
+
+    <div class="source">
+      Fonte de estudo: Cartilha Orientativa da Apuração do IBS — Volume 2,
+      item 1.2.
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
